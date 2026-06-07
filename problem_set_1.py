@@ -7,6 +7,14 @@ Rather, call whichever functions defined in this file that you want to run from 
 
 
 def bark():
+    name = input("Enter dog name: ")
+    age = input("Enter dog age: ")
+    breed = input("Enter dog breed: ")
+
+    name = name.capitalize()
+    breed = breed.capitalize()
+
+    print(f'{name}, the {age} year old {breed}, says, "Woof!"')
     """
     Asks the user to enter the name, age, and breed of a dog, as three separate inputs.
     Then prints out a bark message on behalf of the dog, in the following format:
@@ -18,6 +26,22 @@ def bark():
 
 
 def bark_with_validation():
+    name = input("Enter dog name: ")
+    age = input("Enter dog age: ")
+    breed = input("Enter dog breed: ")
+
+    name = name.capitalize()
+    breed = breed.capitalize()
+
+    if not name.isalpha() or len(name) < 2:
+        print("Name error!")
+    elif not age.isdigit() or int(age) < 0 or int(age) > 15:
+        print("Age error!")
+    elif breed not in ["Schnauzer", "Terrier", "Poodle", "Mastiff"]:
+        print("Breed error!")
+    else:
+        print(f'{name}, the {age} year old {breed}, says, "Woof!"')
+    
     """
     Do everything the same as in the previous bark() function, with the following additional validation requirements:
 
@@ -29,6 +53,16 @@ def bark_with_validation():
 
 
 def respond_to_anything():
+    sentence = input("Enter a sentence: ")
+
+    if sentence.endswith("."):
+        print("That's true.")
+    elif sentence.endswith("?"):
+        print("I'm sorry, I don't know.")
+    elif sentence.endswith("!"):
+        print("Exciting!")
+    else:
+        print("Please include a punctuation mark at the end of your sentence!")
     """
     Ask the user to input a sentence.  Print a response based on the input according to the requirements below.
 
@@ -41,6 +75,17 @@ def respond_to_anything():
 
 
 def respond_to_anything_but_nonsense():
+    sentence = input("Enter a sentence: ")
+
+
+    if sentence.endswith("."):
+        print("That's true.")
+    elif sentence.endswith("?"):
+        print("I'm sorry, I don't know.")
+    elif sentence.endswith("!"):
+        print("Exciting!")
+    else:
+        print("Please include a punctuation mark at the end of your sentence!")
     """
     Do everything the same as in the previous respond_to_anything() function, with the following additional validation requirements:
 

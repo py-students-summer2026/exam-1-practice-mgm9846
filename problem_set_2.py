@@ -7,6 +7,38 @@ Rather, call whichever functions defined in this file that you want to run from 
 
 
 def weather_helper():
+    temp = int(input("Enter temperature: "))
+
+    if temp < -70 or temp > 134:
+        print("Invalid temperature!")
+    elif temp < 40:
+        snowing = input("Is it snowing? ").lower()
+
+        if snowing in ["yes", "yeah", "yup"]:
+            jacket = input("Are you wearing a warm jacket? ").lower()
+
+            if jacket in ["yes", "yeah", "yup"]:
+                print("Glad to hear you're dressed appropriately!")
+            else:
+                print("What were you thinking when you left home today?!")
+        else:
+            raining = input("Is it raining? ").lower()
+
+            if raining in ["yes", "yeah", "yup"]:
+                umbrella = input("Do you have an umbrella? ").lower()
+
+                if umbrella in ["yes", "yeah", "yup"]:
+                    print("Good job staying dry!")
+                else:
+                    print("You must enjoy getting wet!")
+    elif temp > 90:
+        ac = input("Do you have air conditioning? ").lower()
+
+        if ac in ["yes", "yeah", "yup"]:
+            print("Stay cool indoors.")
+        else:
+            print("I hope you have a fan.")
+    
     """
     Make suggestions based on current weather conditions.
 
